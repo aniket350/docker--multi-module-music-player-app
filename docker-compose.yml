@@ -1,4 +1,5 @@
 version: "3"
+#services section includes all the services included in it.
 services:
 
   config-server:
