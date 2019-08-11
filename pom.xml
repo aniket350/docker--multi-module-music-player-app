@@ -4,10 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>track-service</module>
+        <module>trackservice</module>
 		<module>api-gateway</module>
 		<module>configuration-server</module>
-		<module>eureka-server</module>
 		<module>user-services</module>
 		<module>eurekaa-server</module>
 	</modules>
@@ -28,10 +27,18 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

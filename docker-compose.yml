@@ -1,0 +1,40 @@
+version: "3"
+services:
+
+  config-server:
+    build: config-server/
+    ports:
+      - 8085:8085
+    restart: always
+
+  eurekaa-server:
+    build: eureka-server/
+    container_name: eurekaa-server
+    ports:
+      - 9099:9099
+    restart: always
+    network_mode: host
+
+  track-service:
+    build: track-service/
+    ports:
+      - 8084:8084
+    depends_on:
+      - eurekaa-server
+      - config-server
+    restart: always
+    network_mode: host
+
+  api-gateway:
+    build: api-gateway/
+    ports:
+      - 8081:8081
+    depends_on:
+      - track-service
+    restart: always
+
+  user-service:
+    build: user-service/
+    ports:
+      - 8087:8087
+    restart: always

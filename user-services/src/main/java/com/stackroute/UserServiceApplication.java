@@ -1,12 +1,23 @@
 package com.stackroute;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class UserServiceApplication {
+
+    private static Logger LOGGER = LoggerFactory.getLogger(UserServiceApplication.class);
+
     public static void main(String[] args) {
+
         SpringApplication.run(UserServiceApplication.class, args);
+
+        LOGGER.debug("This is a debug message");
+        LOGGER.info("This is an info message");
+        LOGGER.warn("This is a warn message");
+        LOGGER.error("This is an error message");
     }
 }
